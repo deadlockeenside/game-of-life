@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudResolution = new System.Windows.Forms.NumericUpDown();
+            this.bRun = new System.Windows.Forms.Button();
             this.nudDensity = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.bRun = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.nudResolution = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,41 +70,24 @@
             this.splitContainer.SplitterDistance = 144;
             this.splitContainer.TabIndex = 0;
             // 
-            // label1
+            // bRun
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Разрешение";
-            // 
-            // nudResolution
-            // 
-            this.nudResolution.Location = new System.Drawing.Point(88, 12);
-            this.nudResolution.Maximum = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            this.nudResolution.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudResolution.Name = "nudResolution";
-            this.nudResolution.Size = new System.Drawing.Size(39, 20);
-            this.nudResolution.TabIndex = 1;
-            this.nudResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudResolution.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            this.bRun.Location = new System.Drawing.Point(15, 63);
+            this.bRun.Name = "bRun";
+            this.bRun.Size = new System.Drawing.Size(112, 23);
+            this.bRun.TabIndex = 4;
+            this.bRun.Text = "Старт";
+            this.bRun.UseVisualStyleBackColor = true;
+            this.bRun.Click += new System.EventHandler(this.bRun_Click);
             // 
             // nudDensity
             // 
             this.nudDensity.Location = new System.Drawing.Point(88, 37);
+            this.nudDensity.Maximum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             this.nudDensity.Minimum = new decimal(new int[] {
             2,
             0,
@@ -115,7 +98,7 @@
             this.nudDensity.TabIndex = 3;
             this.nudDensity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudDensity.Value = new decimal(new int[] {
-            2,
+            25,
             0,
             0,
             0});
@@ -129,20 +112,37 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Плотность";
             // 
-            // bRun
+            // nudResolution
             // 
-            this.bRun.Location = new System.Drawing.Point(15, 63);
-            this.bRun.Name = "bRun";
-            this.bRun.Size = new System.Drawing.Size(112, 23);
-            this.bRun.TabIndex = 4;
-            this.bRun.Text = "Старт";
-            this.bRun.UseVisualStyleBackColor = true;
-            this.bRun.Click += new System.EventHandler(this.bRun_Click);
+            this.nudResolution.Location = new System.Drawing.Point(88, 12);
+            this.nudResolution.Maximum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.nudResolution.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nudResolution.Name = "nudResolution";
+            this.nudResolution.Size = new System.Drawing.Size(39, 20);
+            this.nudResolution.TabIndex = 1;
+            this.nudResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudResolution.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
-            // timer
+            // label1
             // 
-            this.timer.Interval = 40;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Разрешение";
             // 
             // pictureBox
             // 
@@ -153,6 +153,11 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 40;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // Main
             // 
@@ -167,8 +172,8 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
