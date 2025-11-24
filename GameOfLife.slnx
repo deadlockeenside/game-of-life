@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="ConsoleLife/ConsoleLife.csproj" Id="09ade5ea-a5eb-44a2-90ac-13353e56b72d" />
   <Project Path="GameOfLife/GameOfLife.csproj" Id="18295def-542b-4e82-a30b-d2c556aa8680" />
 </Solution>
